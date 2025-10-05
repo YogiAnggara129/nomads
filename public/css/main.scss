@@ -1,0 +1,80 @@
+$bg-neutral: #e4e6eb !important;
+$bg-primary: #3b5998 !important;
+$btn-primary: #071c4d !important;
+$btn-primary-hover: #1e3771 !important;
+$btn-secondary: #ff9e53 !important;
+$btn-secondary-hover: #ffaa69 !important;
+
+body {
+    background-color: $bg-neutral;
+    font-family: "Nunito", sans-serif;
+    color: $bg-primary;
+}
+
+.navbar-brand {
+    img {
+        max-height: 40px;
+    }
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            color: $btn-primary;
+
+            &.active {
+                font-weight: bold;
+                color: $btn-primary;
+            }
+        }
+    }
+}
+
+.btn-navbar-right {
+    margin-top: -10px !important;
+    height: 70px;
+    margin-bottom: -8px !important;
+    margin-right: -30px !important;
+    border-radius: 0;
+}
+
+.btn-login {
+    background-color: $btn-primary;
+    color: white;
+
+    &:hover {
+        background-color: $btn-primary-hover;
+        color: white;
+    }
+}
+
+header {
+    padding: 180px 0 165px;
+    margin-top: -70px;
+    background-image: url("../img/header-background.jpg");
+    background-size: cover;
+
+    h1,
+    p {
+        color: white;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    .btn-get-started {
+        background-color: $btn-secondary;
+        color: white;
+
+        &:hover {
+            background-color: $btn-secondary-hover;
+            color: white;
+        }
+    }
+}
