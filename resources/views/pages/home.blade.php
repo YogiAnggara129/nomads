@@ -80,6 +80,44 @@
         </a>
     </header>
 
+    <main>
+        <div class="container">
+            <div class="section-stats row d-flex justify-content-center" id="stats">
+                <div class="col-3 col-md-2 stats-detail text-center py-2">
+                    <h2>20k</h2>
+                    <p class="my-0">Members</p>
+                </div>
+                <div class="col-3 col-md-2 stats-detail text-center py-2">
+                    <h2>12</h2>
+                    <p>Countries</p>
+                </div>
+                <div class="col-3 col-md-2 stats-detail text-center py-2">
+                    <h2>3k</h2>
+                    <p>Hotels</p>
+                </div>
+                <div class="col-3 col-md-2 stats-detail text-center py-2">
+                    <h2>72</h2>
+                    <p>Partners</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="section-popular" id="popular">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center section-popular-heading">
+                        <h2>Wisata Popular</h2>
+                        <p>
+                            Something that you never try
+                            <br />
+                            before in this world
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     @include('partials.scripts')
 </body>
 

@@ -1,7 +1,7 @@
 body {
   background-color: #e4e6eb !important;
   font-family: "Nunito", sans-serif;
-  color: #3b5998 !important;
+  color: #071c4d !important;
 }
 
 .navbar-brand img {
@@ -57,4 +57,34 @@ header .btn-get-started {
 header .btn-get-started:hover {
   background-color: #ffaa69 !important;
   color: white;
+}
+
+.section-stats {
+  margin-top: -45px;
+}
+.section-stats .stats-detail {
+  background-color: white;
+}
+.section-stats h2 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+.section-stats p {
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 0;
+}
+
+.section-popular {
+  margin-top: -45px;
+  min-height: 540px;
+  background-color: #051334 !important;
+}
+.section-popular .section-popular-heading {
+  margin-top: 150px;
+}
+.section-popular .section-popular-heading h2,
+.section-popular .section-popular-heading p {
+  color: white;
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

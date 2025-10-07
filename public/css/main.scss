@@ -1,5 +1,5 @@
 $bg-neutral: #e4e6eb !important;
-$bg-primary: #3b5998 !important;
+$bg-primary: #051334 !important;
 $btn-primary: #071c4d !important;
 $btn-primary-hover: #1e3771 !important;
 $btn-secondary: #ff9e53 !important;
@@ -8,7 +8,7 @@ $btn-secondary-hover: #ffaa69 !important;
 body {
     background-color: $bg-neutral;
     font-family: "Nunito", sans-serif;
-    color: $bg-primary;
+    color: $btn-primary;
 }
 
 .navbar-brand {
@@ -75,6 +75,43 @@ header {
         &:hover {
             background-color: $btn-secondary-hover;
             color: white;
+        }
+    }
+}
+
+// statistics
+.section-stats {
+    margin-top: -45px;
+
+    .stats-detail {
+        background-color: white;
+    }
+
+    h2 {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: lighter;
+        margin-bottom: 0;
+    }
+}
+
+// popular
+.section-popular {
+    margin-top: -45px;
+    min-height: 540px;
+    background-color: $bg-primary;
+
+    .section-popular-heading {
+        margin-top: 150px;
+
+        h2,
+        p {
+            color: white;
+            font-weight: bold;
         }
     }
 }
