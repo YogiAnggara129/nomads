@@ -8,6 +8,12 @@ use Livewire\Volt\Volt;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// TODO: DUMMY - START
+Route::get('/detail', function () {
+    return view('pages.detail');
+});
+// TODO: DUMMY - END
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
