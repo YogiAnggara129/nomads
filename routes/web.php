@@ -15,6 +15,9 @@ Route::get('/detail', function () {
 Route::get('/checkout', function () {
     return view('pages.checkout');
 });
+Route::get('/success', function () {
+    return view('pages.success');
+});
 // TODO: DUMMY - END
 
 Route::view('dashboard', 'dashboard')
