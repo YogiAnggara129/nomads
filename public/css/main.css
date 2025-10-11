@@ -1,5 +1,5 @@
 body {
-  background-color: #e4e6eb !important;
+  background-color: white;
   font-family: "Nunito", sans-serif;
   color: #071c4d !important;
 }
@@ -280,4 +280,50 @@ header .btn-get-started:hover {
 }
 .section-details-content .btn-join-now:hover {
   color: #fff;
+}
+.section-details-content .bank .bank-item h3 {
+  font-size: 18px;
+  color: #071c4d;
+  margin-bottom: 0;
+}
+.section-details-content .bank .bank-item p {
+  margin-bottom: 0;
+}
+.section-details-content .bank .bank-item .description {
+  margin-left: 10px;
+  overflow: hidden;
+  float: left;
+}
+.section-details-content .bank .bank-item .description p {
+  font-family: Assistant;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: left;
+  color: #071c4d;
+}
+.section-details-content .bank .bank-item .bank-image {
+  width: 45px;
+  height: 45px;
+  float: left;
+}
+.section-details-content .btn-add-now {
+  background-color: #071c4d;
+  color: #fff;
+}
+.section-details-content .btn-add-now:hover {
+  color: #fff;
+}
+.section-details-content .input-group-text {
+  background-color: transparent;
+}
+.section-details-content h3 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #071c4d;
+}
+.section-details-content .gj-datepicker .datepicker {
+  border-right: 0;
+}
+.section-details-content .gj-datepicker .input-group-append .btn {
+  padding-right: 30px;
 }/*# sourceMappingURL=main.css.map */

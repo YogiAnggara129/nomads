@@ -12,6 +12,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/detail', function () {
     return view('pages.detail');
 });
+Route::get('/checkout', function () {
+    return view('pages.checkout');
+});
 // TODO: DUMMY - END
 
 Route::view('dashboard', 'dashboard')
