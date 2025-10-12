@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    @include('partials.navbar')
+    @include('partials.navbar-alternate')
     {{ $slot }}
     @include('partials.footer')
     @include('partials.scripts')

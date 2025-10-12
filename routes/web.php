@@ -1,24 +1,17 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-// TODO: DUMMY - START
-Route::get('/detail', function () {
-    return view('pages.detail');
-});
-Route::get('/checkout', function () {
-    return view('pages.checkout');
-});
-Route::get('/success', function () {
-    return view('pages.success');
-});
-// TODO: DUMMY - END
+Route::get('/detail', [DetailController::class, 'index'])->name('detail');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout-success');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
