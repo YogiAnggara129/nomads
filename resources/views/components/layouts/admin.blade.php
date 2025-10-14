@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Nomads - Dashboard</title>
 
     @include('partials.admin.styles')
 </head>
