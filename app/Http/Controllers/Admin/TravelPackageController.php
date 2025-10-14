@@ -56,7 +56,7 @@ class TravelPackageController extends Controller
      */
     public function edit(string $id)
     {
-        $item = TravelPackage::find($id);
+        $item = TravelPackage::findOrFail($id);
 
         return view('pages.admin.travel-package.edit', [
             'item' => $item,
@@ -71,7 +71,7 @@ class TravelPackageController extends Controller
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
 
-        $item = TravelPackage::find($id);
+        $item = TravelPackage::findOrFail($id);
         $item->update($data);
 
         return redirect()->route('travel-package.index')->with('success', 'Travel package edited successfully!');
@@ -82,7 +82,7 @@ class TravelPackageController extends Controller
      */
     public function destroy(string $id)
     {
-        $item = TravelPackage::find($id);
+        $item = TravelPackage::findOrFail($id);
         $item->delete();
 
         return redirect()->route('travel-package.index')->with('success', 'The travel package has been successfully deleted!');
