@@ -13,9 +13,17 @@ Route::get('/detail', [DetailController::class, 'index'])->name('detail');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout-success');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::prefix('admin')
+    ->namespace('Admin')
+    ->middleware(['auth', 'verified', 'is_admin'])
+    ->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])
+            ->name('dashboard');
+    });
+
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
@@ -36,11 +44,4 @@ Route::middleware(['auth'])->group(function () {
         ->name('two-factor.show');
 });
 
-Route::prefix('admin')
-    ->namespace('Admin')
-    ->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])
-            ->name('dashboard');
-    });
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

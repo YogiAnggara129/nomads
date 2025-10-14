@@ -30,21 +30,47 @@
                     <a href="#" class="nav-link">Testimonial</a>
                 </li>
 
-                {{-- Mobile button - start --}}
-                <form action="" class="form-inline d-sm-block d-md-none">
-                    <button class="btn btn-login my-2 my-sm-0">
-                        Masuk
-                    </button>
-                </form>
-                {{-- Mobile button - end --}}
+                @guest
+                    {{-- Mobile button - start --}}
+                    <form class="form-inline d-sm-block d-md-none">
+                        <button class="btn btn-login my-2 my-sm-0" type="button"
+                            onclick="window.location.href='{{ url('login') }}'">
+                            Masuk
+                        </button>
+                    </form>
+                    {{-- Mobile button - end --}}
 
-                {{-- Desktop button - start --}}
-                <form action="" class="form-inline my-2 my-lg-0 d-none d-md-block">
-                    <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
-                        Masuk
-                    </button>
-                </form>
-                {{-- Desktop button - end --}}
+                    {{-- Desktop button - start --}}
+                    <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                        <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" type="button"
+                            onclick="window.location.href='{{ url('login') }}'">
+                            Masuk
+                        </button>
+                    </form>
+                    {{-- Desktop button - end --}}
+                @endguest
+
+                @auth
+                    {{-- Mobile button - start --}}
+                    <form action="{{ route('logout') }}" class="form-inline d-sm-block d-md-none"
+                        action="{{ url('logout') }}" method="POST">
+                        @csrf
+                        <button class="btn btn-login my-2 my-sm-0" type="submit">
+                            Keluar
+                        </button>
+                    </form>
+                    {{-- Mobile button - end --}}
+
+                    {{-- Desktop button - start --}}
+                    <form action="{{ route('logout') }}" class="form-inline my-2 my-lg-0 d-none d-md-block"
+                        action="{{ url('logout') }}" method="POST">
+                        @csrf
+                        <button class="btn btn-login btn-navbar-right my-2 my-sm-0 px-4" type="submit">
+                            Keluar
+                        </button>
+                    </form>
+                    {{-- Desktop button - end --}}
+                @endauth
             </ul>
         </div>
     </nav>
