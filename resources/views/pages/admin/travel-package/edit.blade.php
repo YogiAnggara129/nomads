@@ -1,53 +1,82 @@
 <x-layouts.admin>
+    <!-- Begin Page Content -->
     <div class="container-fluid">
 
-        <!-- Header -->
+        <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Paket Travel</h1>
-            <flux:link href="{{ route('travel-package.index') }}">
-                <flux:button variant="outline">
-                    <i class="fas fa-arrow-left mr-1"></i> Kembali
-                </flux:button>
-            </flux:link>
+            <h1 class="h3 mb-0 text-gray-800">Ubah Paket Travel {{ $item->title }}</h1>
         </div>
 
-        <!-- Form Card -->
-        <div class="card p-4 w-100">
-            <form method="POST" action="{{ route('travel-package.update', $item->id) }}">
-                @csrf
-                @method('PUT')
-
-                <div class="grid grid-cols-2 gap-4">
-                    <flux:input label="Title" name="title" value="{{ old('title', $item->title) }}" required />
-                    <flux:input label="Slug" name="slug" value="{{ old('slug', $item->slug) }}" required />
-                    <flux:input label="Location" name="location" value="{{ old('location', $item->location) }}"
-                        required />
-                    <flux:input label="Featured Event" name="featured_event"
-                        value="{{ old('featured_event', $item->featured_event) }}" required />
-                    <flux:input label="Language" name="language" value="{{ old('language', $item->language) }}"
-                        required />
-                    <flux:input label="Foods" name="foods" value="{{ old('foods', $item->foods) }}" required />
-                    <flux:input type="date" label="Departure Date" name="departure_date"
-                        value="{{ old('departure_date', $item->departure_date) }}" required />
-                    <flux:input label="Duration" name="duration" value="{{ old('duration', $item->duration) }}"
-                        required />
-                    <flux:input label="Type" name="type" value="{{ old('type', $item->type) }}" required />
-                    <flux:input type="number" label="Price" name="price" value="{{ old('price', $item->price) }}"
-                        required />
-                </div>
-
-                <div class="mt-4">
-                    <flux:textarea label="About" name="about" rows="4">{{ old('about', $item->about) }}
-                    </flux:textarea>
-                </div>
-
-                <div class="mt-6 flex justify-end">
-                    <flux:button type="submit" variant="primary">
-                        <i class="fas fa-save mr-2"></i> Update
-                    </flux:button>
-                </div>
-            </form>
+        <!-- Content Row -->
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <div class="card shadow">
+            <div class="card-body">
+                <form action="{{ route('travel-package.update', $item->id) }}" method="post">
+                    @method('PUT')
+                    @csrf
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" name="title" placeholder="Title"
+                            value="{{ $item->title }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control" name="location" placeholder="Location"
+                            value="{{ $item->location }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="about">About</label>
+                        <textarea name="about" rows="10" class="d-block w-100 form-control">{{ $item->about }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="featured_event">Featured Event</label>
+                        <input type="text" class="form-control" name="featured_event" placeholder="Featured Event"
+                            value="{{ $item->featured_event }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <input type="text" class="form-control" name="language" placeholder="Language"
+                            value="{{ $item->language }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="foods">Foods</label>
+                        <input type="text" class="form-control" name="foods" placeholder="Foods"
+                            value="{{ $item->foods }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="departure_date">Departure Date</label>
+                        <input type="date" class="form-control" name="departure_date" placeholder="Departure Date"
+                            value="{{ $item->departure_date }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <input type="text" class="form-control" name="duration" placeholder="Duration"
+                            value="{{ $item->duration }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <input type="text" class="form-control" name="type" placeholder="Type"
+                            value="{{ $item->type }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" name="price" placeholder="Price"
+                            value="{{ $item->price }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Ubah
+                    </button>
+                </form>
+            </div>
         </div>
-
     </div>
+    <!-- /.container-fluid -->
 </x-layouts.admin>
