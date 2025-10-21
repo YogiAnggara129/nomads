@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 class TravelPackage extends Model
 {
@@ -22,5 +23,10 @@ class TravelPackage extends Model
     public function galleries()
     {
         return $this->hasMany(Gallery::class);
+    }
+
+    public function getDepartureDateFormattedAttribute()
+    {
+        return Carbon::create($this->departure_date)->toFormattedDateString();
     }
 }
